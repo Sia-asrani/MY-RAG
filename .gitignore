@@ -1,0 +1,67 @@
+#venv files
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / Packaging
+build/
+dist/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment Variables
+.env
+.env.*
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Output Files
+output/
+chunks.json
+
+# Vector Databases
+qdrant_storage/
+chroma_db/
+vector_store/
+
+# Model Cache
+models/
+.cache/
+huggingface/
+
+# Uploaded PDFs (optional)
+# Uncomment if PDFs shouldn't be committed
+# data/*.pdf
+
+# Temporary Files
+temp/
+tmp/
+
+# Langfuse / Monitoring
+langfuse.db
+
+# Misc
+*.bak
+*.swp
+
