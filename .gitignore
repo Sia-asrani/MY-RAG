@@ -65,3 +65,6 @@ langfuse.db
 *.bak
 *.swp
 
+#dev notes
+notes.md
+struc*.md

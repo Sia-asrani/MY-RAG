@@ -16,3 +16,17 @@ rag-muj/
 ├── requirements.txt
 │
 └── main.py
+
+
+
+after parsing + chunking:
+
+chunks.json
+ ↓
+BGE Embedding Model
+ ↓
+Vector Generation
+ ↓
+Store Embeddings
+ ↓
+Manual Retrieval
