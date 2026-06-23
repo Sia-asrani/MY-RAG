@@ -1,7 +1,7 @@
 import json
 
-from embedder import embed_text
-from similarity import cosine_similarity
+from embeddings.embedder import embed_text
+from embeddings.similarity import cosine_similarity
 
 #load chunks
 with open(
