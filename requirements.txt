@@ -1,7 +1,9 @@
 pymupdf
 pandas
+dotenv
 tiktoken
 sentence-transformers
 torch
 numpy
 qdrant-client
+groq                        #or your preffered LLM service

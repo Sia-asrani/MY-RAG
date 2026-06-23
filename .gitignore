@@ -68,3 +68,6 @@ langfuse.db
 #dev notes
 notes.md
 struc*.md
+
+#tests
+test_groq.py

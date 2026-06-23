@@ -13,4 +13,6 @@ CONTENT:
 """
         )
 
-    return "\n\n".join(context_parts)
+    context = "\n\n".join(context_parts)
+    
+    return context[:4000]
