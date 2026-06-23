@@ -2,3 +2,5 @@ pymupdf
 pandas
 tiktoken
 sentence-transformers
+torch
+numpy
