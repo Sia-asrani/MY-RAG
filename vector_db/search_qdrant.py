@@ -6,35 +6,36 @@ client = QdrantClient(
     path="./qdrant_data"
 )
 
-def retrieve_qdrant(
-    query,
-    top_k=10
-):
+def retrieve_qdrant(query, top_k=10):
+    try:
+        query_vector = embed_text(
+            query
+        ).tolist()
 
-    query_vector = embed_text(
-        query
-    ).tolist()
+        results = client.query_points(
+            collection_name="muj_handbook",
 
-    results = client.query_points(
-        collection_name="muj_handbook",
+            query=query_vector,
 
-        query=query_vector,
-
-        limit=top_k
-    )
-
-    retrieved = []
-
-    for point in results.points:
-
-        retrieved.append(
-            (
-                point.score,
-                point.payload
-            )
+            limit=top_k
         )
 
-    return retrieved
+        retrieved = []
+
+        for point in results.points:
+
+            retrieved.append(
+                (
+                    point.score,
+                    point.payload
+                )
+            )
+
+        return retrieved
+    finally:
+        pass
+    #     client.close()
+        
 
 
 if __name__ == "__main__":
@@ -72,5 +73,3 @@ if __name__ == "__main__":
         )
 
         print()
-        
-        client.close()

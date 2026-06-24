@@ -71,3 +71,4 @@ struc*.md
 
 #tests
 test_groq.py
+test*.py

@@ -4,24 +4,39 @@ from rag.context_builder import build_context
 from rag.prompt_builder import build_prompt
 from rag.llm_client import generate_answer
 
-sim_thresh = 0.35
+
+def should_reject(reranked_results):
+
+    if not reranked_results:
+        return True
+    best_score = reranked_results[0][0]
+    if len(reranked_results) == 1:
+        return best_score < 0
+
+    second_score = reranked_results[1][0]
+
+    score_gap = best_score - second_score
+
+    print("\nBest Rerank Score:", round(best_score, 4))
+    print("Second Rerank Score:", round(second_score, 4))
+    print("Score Gap:", round(score_gap, 4))
+
+    #rejection rule: if everything is similarly bad, we probably don't have a real answer
+    if best_score < -5 and score_gap < 1:
+        return True
+
+    return False
+
 
 def ask_handbook(query):
-    
+
     print("\n" + "=" * 80)
     print("QUERY:", query)
     print("=" * 80)
-    
-    retrieved = retrieve_qdrant(
-    query,
-    top_k=10)
-    
+    retrieved = retrieve_qdrant(query, top_k=10)
+
     if not retrieved:
         return "I could not find that information in the handbook."
-
-    best_score = retrieved[0][0]
-
-    print(f"\nBest Retrieval Score: {best_score:.4f}")
 
     print("\nTop Retrieved Results:")
 
@@ -33,45 +48,25 @@ def ask_handbook(query):
             f"{chunk['subsection']}"
         )
 
-    filtered = []
-
-    for score, chunk in retrieved:
-
-        if score >= sim_thresh:
-
-            filtered.append(
-                (
-                    score,
-                    chunk
-                )
-            )
-
-    print(
-        f"\nChunks after threshold ({sim_thresh}): "
-        f"{len(filtered)}"
-    )
-
-    if len(filtered) == 0:
-
-        return (
-            "I could not find that information "
-            "in the handbook."
-        )
-    reranked = rerank(
-            query,
-            filtered
-        )
+    reranked = rerank(query, retrieved)
 
     print("\nTop Reranked Results:")
 
     for score, chunk in reranked[:5]:
 
         print(
-                f"{chunk['subsection_id']} | "
-                f"{round(score, 4)} | "
-                f"{chunk['subsection']}"
-            )
-        
+            f"{chunk['subsection_id']} | "
+            f"{round(score, 4)} | "
+            f"{chunk['subsection']}"
+        )
+
+    if should_reject(reranked):
+
+        return (
+            "I could not find that information "
+            "in the handbook."
+        )
+
     context = build_context(
         reranked,
         top_k=3
@@ -91,7 +86,9 @@ def ask_handbook(query):
     print("\nPrompt Length:")
     print(len(prompt))
 
-    answer = generate_answer(prompt)
+    answer = generate_answer(
+        prompt
+    )
 
     return answer
 
