@@ -1,69 +1,40 @@
-import json
+from qdrant_client import QdrantClient
 
 from embeddings.embedder import embed_text
-from embeddings.similarity import cosine_similarity
 
-#load chunks
-with open(
-    "output/chunks_with_embeddings.json",
-    "r",
-    encoding="utf-8"
-) as f:
 
-    chunks = json.load(f)
-    
-#retreive chunks
+client = QdrantClient(
+    path="./qdrant_db"
+)
+
+COLLECTION_NAME = "muj_handbook"
+
+
 def retrieve(query, top_k=5):
 
-    query_embedding = embed_text(query)
+    query_embedding = embed_text(
+        query
+    ).tolist()
 
-    scores = []
-
-    for chunk in chunks:
-
-        score = cosine_similarity(
-            query_embedding,
-            chunk["embedding"]
-        )
-
-        scores.append(
-            (
-                score,
-                chunk
-            )
-        )
-
-    scores.sort(
-        key=lambda x: x[0],
-        reverse=True
+    results = client.query_points(
+        collection_name=COLLECTION_NAME,
+        query=query_embedding,
+        limit=top_k
     )
 
-    return scores[:top_k]
+    return results.points
 
-#test query
+
 results = retrieve(
     "What attendance is required?"
 )
 
-#results
-print("\nTOP RESULTS\n")
-
-for score, chunk in results:
+for r in results:
 
     print("=" * 80)
-
-    print("Score:", round(score, 4))
-
-    print("Chunk ID:", chunk["id"])
-
-    print("Section:", chunk["section"])
-
-    print("Subsection:", chunk["subsection"])
-
-    print("Subsection ID:", chunk["subsection_id"])
-
+    print("Score:", round(r.score, 4))
+    print("Section:", r.payload["section"])
     print()
-
-    print(chunk["text"][:300])
-
-    print()
+    print(r.payload["text"][:300])
+    
+#client.close()

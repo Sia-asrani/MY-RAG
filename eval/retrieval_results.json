@@ -1,0 +1,137 @@
+[
+    {
+        "question": "What attendance is required?",
+        "results": [
+            {
+                "rank": 1,
+                "chunk_id": "chunk_46",
+                "score": 0.6586,
+                "page": 18,
+                "section": "ACADEMIC PROCESS",
+                "text": "The aggregate percentage of attendance of the student during the semester will be entered in his/her grade sheet of that semester."
+            },
+            {
+                "rank": 2,
+                "chunk_id": "chunk_44",
+                "score": 0.6477,
+                "page": 18,
+                "section": "ACADEMIC PROCESS",
+                "text": "Students are expected to attend every lecture, tutorial and practical class scheduled for them. Attendance will be recorded for every class in every course they attend."
+            },
+            {
+                "rank": 3,
+                "chunk_id": "chunk_45",
+                "score": 0.6116,
+                "page": 18,
+                "section": "ACADEMIC PROCESS",
+                "text": "A student with less than 75% attendance in individual courses shall not be permitted to write the end semester examination in that course and will be given DT Letter Grade in the course."
+            },
+            {
+                "rank": 4,
+                "chunk_id": "chunk_73",
+                "score": 0.5864,
+                "page": 20,
+                "section": "ACADEMIC PROCESS",
+                "text": "Only students with attendance ≥ 75 % will be permitted to appear for the end semester examination."
+            },
+            {
+                "rank": 5,
+                "chunk_id": "chunk_53",
+                "score": 0.538,
+                "page": 19,
+                "section": "ACADEMIC PROCESS",
+                "text": "If a student is not eligible to appear in the end-semester examination owing to his/her not fulfilling the minimum attendance requirements in any course, he/she will be awarded a 'DT' grade (detained) and has to re-register for the course(s) at the next available opportunity."
+            }
+        ]
+    },
+    {
+        "question": "How is GPA calculated?",
+        "results": [
+            {
+                "rank": 1,
+                "chunk_id": "chunk_48",
+                "score": 0.5653,
+                "page": 19,
+                "section": "ACADEMIC PROCESS",
+                "text": "The overall performance of a student in each semester is indicated by the Grade Point Average (GPA) which is the weighted average of the grade points obtained in that semester expressed as 𝐺𝑃𝐴= ∑ 𝐶𝑖𝐺𝑖 𝑛 𝑖=1 ∑ 𝐶𝑖 𝑛 𝑖=1 where, n=number of courses graded per semester C = Course credits G = Grade points"
+            },
+            {
+                "rank": 2,
+                "chunk_id": "chunk_95",
+                "score": 0.5369,
+                "page": 21,
+                "section": "ACADEMIC PROCESS",
+                "text": "BHM. - 166* *Credit used for CGPA computation: 160. Open electives are excluded from GPA/CGPA computation."
+            },
+            {
+                "rank": 3,
+                "chunk_id": "chunk_49",
+                "score": 0.5331,
+                "page": 19,
+                "section": "ACADEMIC PROCESS",
+                "text": "The overall performance of the student for the entire programme is indicated by the Cumulative Grade Point Average (CGPA) which is the weighted average of the grade points obtained across all semesters till date 𝐶𝐺𝑃𝐴= ∑ 𝐶𝑖𝐺𝑖 𝑁 𝑖=1 ∑ 𝐶𝑖 𝑁 𝑖=1 where, N=Total number of courses graded till date"
+            },
+            {
+                "rank": 4,
+                "chunk_id": "chunk_96",
+                "score": 0.533,
+                "page": 22,
+                "section": "ACADEMIC PROCESS",
+                "text": "BBA Hospitality & Tourism operations – 126* *Credit used for CGPA computation: 120. Open electives are excluded from GPA/CGPA computation. 4.19.2.3 BBA & B. Com (Hons.) - 148** **Credit used for CGPA computation: 145 in B.Com (Hons). (Open electives are excluded from GPA/CGPA computation). Credit used for CGPA computation: 142 in BBA (Open electives are excluded from GPA/CGPA computation) 4.19.2.4 B. Com- 132* * Credit used for CGPA computation: 126 in B.Com. (Open electives are excluded from GPA/CGPA computation) 4.19.2.5 M.Com. – 100"
+            },
+            {
+                "rank": 5,
+                "chunk_id": "chunk_97",
+                "score": 0.4959,
+                "page": 22,
+                "section": "ACADEMIC PROCESS",
+                "text": "Minimum CGPA for Graduation is 5.0 and the Maximum that can be earned is 10."
+            }
+        ]
+    },
+    {
+        "question": "Can NRI students apply?",
+        "results": [
+            {
+                "rank": 1,
+                "chunk_id": "chunk_14",
+                "score": 0.6117,
+                "page": 15,
+                "section": "ELIGIBILITY FOR ADMISSION",
+                "text": "Eligible NRI/ Foreign students are admitted based on their qualifying examination performance."
+            },
+            {
+                "rank": 2,
+                "chunk_id": "chunk_9",
+                "score": 0.5426,
+                "page": 15,
+                "section": "ELIGIBILITY FOR ADMISSION",
+                "text": "Eligible NRI/ Foreign students are admitted based on their qualifying examination      performance."
+            },
+            {
+                "rank": 3,
+                "chunk_id": "chunk_20",
+                "score": 0.4742,
+                "page": 16,
+                "section": "ELIGIBILITY FOR ADMISSION",
+                "text": "Those who secure minimum 40% aggregate marks in 10+2 level from recognized Board/ University are eligible to apply for the programme."
+            },
+            {
+                "rank": 4,
+                "chunk_id": "chunk_16",
+                "score": 0.4365,
+                "page": 15,
+                "section": "ELIGIBILITY FOR ADMISSION",
+                "text": "Those who secure minimum 50% aggregate marks in 10+2 level from recognized Board/ University are eligible to apply for the programme."
+            },
+            {
+                "rank": 5,
+                "chunk_id": "chunk_99",
+                "score": 0.4333,
+                "page": 22,
+                "section": "ACADEMIC PROCESS",
+                "text": "Open electives are excluded from GPA/CGPA computation. On successful completion of the Experiential learning, Open Elective/MLCs, Industrial training the student will get a satisfactory grade (S) and an unsatisfactory grade (US) in case of incompletion of the course. 5. Transfer of Credits"
+            }
+        ]
+    }
+]

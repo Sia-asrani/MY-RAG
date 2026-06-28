@@ -5,7 +5,7 @@ from qdrant_client.models import PointStruct
 
 
 client = QdrantClient(
-    path="./qdrant_data"
+    path="./qdrant_db"
 )
 
 with open(
@@ -47,4 +47,4 @@ print(
     f"Inserted {len(points)} points."
 )
 
-client.close()
+#client.close()

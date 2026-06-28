@@ -3,7 +3,7 @@ from qdrant_client import QdrantClient
 from embeddings.embedder import embed_text
 
 client = QdrantClient(
-    path="./qdrant_data"
+    path="./qdrant_db"
 )
 
 def retrieve_qdrant(query, top_k=10):
@@ -34,7 +34,7 @@ def retrieve_qdrant(query, top_k=10):
         return retrieved
     finally:
         pass
-    #     client.close()
+    #     #client.close()
         
 
 

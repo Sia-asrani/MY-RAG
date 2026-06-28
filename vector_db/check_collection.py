@@ -1,7 +1,7 @@
 from qdrant_client import QdrantClient
 
 client = QdrantClient(
-    path="./qdrant_data"
+    path="./qdrant_db"
 )
 
 info = client.get_collection(
@@ -10,4 +10,4 @@ info = client.get_collection(
 
 print(info)
 
-client.close()
+#client.close()

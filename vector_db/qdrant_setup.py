@@ -5,7 +5,7 @@ from qdrant_client.models import (
 )
 
 client = QdrantClient(
-    path="./qdrant_data"
+    path="./qdrant_db"
 )
 
 collection_name = "muj_handbook"
@@ -28,4 +28,4 @@ else:
 
     print("Collection already exists.")
 
-client.close()
+#client.close()

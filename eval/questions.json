@@ -1,0 +1,25 @@
+[
+    {
+        "question": "What attendance is required?",
+        "expected_ids": [
+            "chunk_73",
+            "chunk_45",
+            "chunk_53"
+        ]
+    },
+    {
+        "question": "How is GPA calculated?",
+        "expected_ids": [
+            "chunk_48",
+            "chunk_49",
+            "chunk_97"
+        ]
+    },
+    {
+        "question": "Can NRI students apply?",
+        "expected_ids": [
+            "chunk_14",
+            "chunk_9"
+        ]
+    }
+]
